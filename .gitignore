@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+._*
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Node modules
+node_modules/
+dist/
+build/
