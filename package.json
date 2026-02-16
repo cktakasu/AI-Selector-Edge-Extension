@@ -1,5 +1,5 @@
 {
-  "name": "ai-selecter",
+  "name": "ai-selector-edge",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -11,8 +11,7 @@
   },
   "dependencies": {
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "lucide-react": "^0.344.0"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@crxjs/vite-plugin": "^2.0.0-beta.23",
