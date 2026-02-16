@@ -20,14 +20,7 @@ export function LinkCard({ link, index }: { link: Link; index: number }) {
             title={link.name}
             aria-label={`Open ${link.name}`}
         >
-            {link.isNew && (
-                <span className="absolute -top-1 -right-1 flex h-[13px] w-auto px-0.5 z-10">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-[13px] w-auto px-1 bg-sky-500 text-[6px] font-bold text-white items-center justify-center uppercase tracking-tighter">
-                        New
-                    </span>
-                </span>
-            )}
+
             <div className="w-full h-full flex items-center justify-center overflow-hidden rounded-lg">
                 {!imgError ? (
                     <img

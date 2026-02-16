@@ -3,7 +3,6 @@ export interface Link {
     name: string
     url: string
     icon?: string
-    isNew?: boolean
 }
 
 export const links: Link[] = [
@@ -17,8 +16,7 @@ export const links: Link[] = [
         id: 'claude',
         name: 'Claude',
         url: 'https://claude.ai',
-        icon: 'claude.svg',
-        isNew: true
+        icon: 'claude.svg'
     },
     {
         id: 'gemini',
@@ -36,8 +34,7 @@ export const links: Link[] = [
         id: 'genspark',
         name: 'Genspark',
         url: 'https://www.genspark.ai',
-        icon: 'genspark.svg',
-        isNew: true
+        icon: 'genspark.svg'
     },
     {
         id: 'kimi',
@@ -49,8 +46,7 @@ export const links: Link[] = [
         id: 'manus',
         name: 'Manus',
         url: 'https://manus.ai',
-        icon: 'manus.svg',
-        isNew: true
+        icon: 'manus.svg'
     }
 ]
 
