@@ -8,7 +8,7 @@
   font-weight: 400;
 
   color: #1a1a2e;
-  background-color: transparent; /* Make background transparent for popup to look shaped */
+  background-color: #f4f4f5;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -22,8 +22,15 @@ html, body {
   width: max-content;
   min-width: fit-content;
   height: auto;
-  background: transparent;
+  background: #f4f4f5;
   overflow-x: hidden;
+}
+
+#root {
+  width: max-content;
+  min-width: fit-content;
+  background: rgba(255, 255, 255, 0.92);
+  overflow: hidden;
 }
 
 @keyframes slideIn {
