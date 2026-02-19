@@ -21,3 +21,5 @@ build/
 vite.config.js
 vite.config.d.ts
 
+# Package output
+ai-selector-edge.zip
