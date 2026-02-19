@@ -8,8 +8,8 @@
  * 出力: ai-selector-edge.zip
  */
 
-import { existsSync, readdirSync, statSync, readFileSync } from 'fs'
-import { join, relative } from 'path'
+import { existsSync } from 'fs'
+import { join } from 'path'
 import { execSync } from 'child_process'
 
 const root = new URL('..', import.meta.url).pathname.replace(/\/$/, '')

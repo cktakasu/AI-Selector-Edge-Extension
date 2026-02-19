@@ -20,9 +20,8 @@
  *   node scripts/sync-from-chrome.mjs ../AI-Selector-Chrome-Extension --check
  */
 
-import { readFileSync, writeFileSync, mkdirSync, readdirSync, statSync, existsSync, copyFileSync } from 'fs'
+import { readFileSync, mkdirSync, readdirSync, statSync, existsSync, copyFileSync } from 'fs'
 import { join, relative, dirname, basename } from 'path'
-import { execSync } from 'child_process'
 
 const [,, chromeRepoPath, flag] = process.argv
 const CHECK_MODE = flag === '--check'
