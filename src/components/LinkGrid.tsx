@@ -6,7 +6,8 @@ interface LinkGridProps {
 
 export function LinkGrid({ children }: LinkGridProps) {
     return (
-        <div className="flex flex-row flex-nowrap gap-0.5 justify-center items-center w-full px-0">
+        // 要素を5列のグリッドで配置し、マウス移動距離を短縮するコンパクトなブロック状にする
+        <div className="grid grid-cols-5 gap-1 justify-end place-items-center w-max p-0 m-0">
             {children}
         </div>
     )
