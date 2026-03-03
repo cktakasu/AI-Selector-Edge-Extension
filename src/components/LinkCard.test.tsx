@@ -21,8 +21,11 @@ describe('LinkCard', () => {
   })
 
   it('chrome.tabs.create が利用可能なら新規タブを開く', async () => {
-    const createMock = vi.fn()
-    const chromeMock = { tabs: { create: createMock } } as unknown as typeof chrome
+    const createMock = vi.fn((_opts, cb) => cb && cb())
+    const chromeMock = {
+      runtime: { lastError: undefined },
+      tabs: { create: createMock }
+    } as unknown as typeof chrome
     Object.defineProperty(globalThis, 'chrome', {
       value: chromeMock,
       configurable: true,
@@ -32,7 +35,7 @@ describe('LinkCard', () => {
     render(<LinkCard link={link} index={0} />)
     await userEvent.click(screen.getByRole('button', { name: 'Open ChatGPT' }))
 
-    expect(createMock).toHaveBeenCalledWith({ url: link.url })
+    expect(createMock).toHaveBeenCalledWith({ url: link.url }, expect.any(Function))
     expect(openSpy).not.toHaveBeenCalled()
   })
 

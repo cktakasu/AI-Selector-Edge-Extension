@@ -24,16 +24,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* カラーパレット (Dark) */
-    --bg-body: #18181b;
-    --bg-popup: rgba(30, 30, 36, 0.95);
-    --bg-card-hover: rgba(255, 255, 255, 0.08);
-    --text-primary: #e4e4e7;
-    --text-muted: #a1a1aa;
-    --border-subtle: rgba(255, 255, 255, 0.06);
-  }
+.dark {
+  /* カラーパレット (Dark) */
+  --bg-body: #18181b;
+  --bg-popup: rgba(30, 30, 36, 0.95);
+  --bg-card-hover: rgba(255, 255, 255, 0.08);
+  --text-primary: #e4e4e7;
+  --text-muted: #a1a1aa;
+  --border-subtle: rgba(255, 255, 255, 0.06);
 }
 
 html,

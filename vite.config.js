@@ -17,15 +17,24 @@ var manifest = defineManifest({
         "48": "icon.png",
         "128": "icon.png"
     },
-    permissions: ["contextMenus"],
+    permissions: ["contextMenus", "storage"],
     background: {
         service_worker: "src/background.ts",
         type: "module"
-    }
+    },
+    options_page: "options.html"
 });
 export default defineConfig({
     plugins: [
         react(),
         crx({ manifest: manifest }),
     ],
+    build: {
+        rollupOptions: {
+            input: {
+                main: 'index.html',
+                options: 'options.html'
+            }
+        }
+    }
 });

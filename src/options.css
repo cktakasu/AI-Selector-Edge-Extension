@@ -1,0 +1,16 @@
+/* Options page specific styles */
+:root {
+    --bg-body: #f4f4f5;
+    --text-primary: #1a1a2e;
+}
+
+.dark {
+    --bg-body: #09090b;
+    --text-primary: #e4e4e7;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}

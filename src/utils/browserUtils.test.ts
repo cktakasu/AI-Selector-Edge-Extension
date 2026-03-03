@@ -8,7 +8,10 @@ describe('browserUtils', () => {
     });
 
     it('isChromeExtension が chrome API 完全存在時に true を返す', () => {
-        const chromeMock = { tabs: { create: vi.fn() } } as unknown as typeof chrome;
+        const chromeMock = {
+            runtime: { lastError: undefined },
+            tabs: { create: vi.fn((_opts, cb) => cb && cb()) }
+        } as unknown as typeof chrome;
         Object.defineProperty(globalThis, 'chrome', { value: chromeMock, configurable: true });
         expect(isChromeExtension()).toBe(true);
     });
@@ -19,12 +22,15 @@ describe('browserUtils', () => {
     });
 
     it('openInNewTab が拡張機能環境で chrome.tabs.create を呼び出す', () => {
-        const createMock = vi.fn();
-        const chromeMock = { tabs: { create: createMock } } as unknown as typeof chrome;
+        const createMock = vi.fn((_opts, cb) => cb && cb());
+        const chromeMock = {
+            runtime: { lastError: undefined },
+            tabs: { create: createMock }
+        } as unknown as typeof chrome;
         Object.defineProperty(globalThis, 'chrome', { value: chromeMock, configurable: true });
 
         openInNewTab('https://example.com');
-        expect(createMock).toHaveBeenCalledWith({ url: 'https://example.com' });
+        expect(createMock).toHaveBeenCalledWith({ url: 'https://example.com' }, expect.any(Function));
     });
 
     it('openInNewTab がWebブラウザ環境で window.open にフォールバックする', () => {
@@ -36,7 +42,10 @@ describe('browserUtils', () => {
 
     it('openInNewTab に空の文字が渡された場合は何もしない', () => {
         const createMock = vi.fn();
-        const chromeMock = { tabs: { create: createMock } } as unknown as typeof chrome;
+        const chromeMock = {
+            runtime: { lastError: undefined },
+            tabs: { create: createMock }
+        } as unknown as typeof chrome;
         Object.defineProperty(globalThis, 'chrome', { value: chromeMock, configurable: true });
 
         openInNewTab('');

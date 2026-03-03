@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, memo, useCallback, useMemo } from 'react'
 import type { Link } from '../data/links'
 import { openInNewTab } from '../utils/browserUtils'
 import { isWithinDays } from '../utils/dateUtils'
@@ -9,20 +9,24 @@ interface LinkCardProps {
     index: number
 }
 
-export function LinkCard({ link, index }: LinkCardProps) {
+export const LinkCard = memo(function LinkCard({ link, index }: LinkCardProps) {
     const [imgError, setImgError] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
 
     // 14日以内なら NEW バッジを表示
-    const isNew = isWithinDays(link.updatedAt, 14);
+    const isNew = useMemo(() => isWithinDays(link.updatedAt, 14), [link.updatedAt]);
+
+    const handleMouseEnter = useCallback(() => setIsHovered(true), []);
+    const handleMouseLeave = useCallback(() => setIsHovered(false), []);
+    const handleClick = useCallback(() => openInNewTab(link.url), [link.url]);
 
     return (
         <button
-            onClick={() => openInNewTab(link.url)}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            onFocus={() => setIsHovered(true)}
-            onBlur={() => setIsHovered(false)}
+            onClick={handleClick}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            onFocus={handleMouseEnter}
+            onBlur={handleMouseLeave}
             className="relative flex items-center justify-center p-0 bg-transparent border-none shadow-none outline-none rounded-lg group w-[38px] h-[38px] cursor-pointer animate-pop-in opacity-0 fill-mode-forwards glow-hover hover:scale-110 hover:-translate-y-0.5"
             style={{
                 animationDelay: `${index * 40}ms`,
@@ -52,4 +56,4 @@ export function LinkCard({ link, index }: LinkCardProps) {
             </div>
         </button>
     )
-}
+});
