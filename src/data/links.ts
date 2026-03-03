@@ -63,7 +63,8 @@ export const links: Link[] = [
         category: 'Productivity',
         icon: 'genspark.svg',
         brandColor: '#f97316',
-        searchUrl: 'https://www.genspark.ai/search?query='
+        searchUrl: 'https://www.genspark.ai/search?query=',
+        invertDark: true
     },
     {
         id: 'manus',
