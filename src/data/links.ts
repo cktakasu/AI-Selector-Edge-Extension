@@ -44,18 +44,6 @@ export const links: Link[] = [
         updatedAt: '2026-02-19'
     },
     {
-        id: 'perplexity',
-        name: 'Perplexity',
-        description: 'AI-powered search engine and chatbot that provides accurate and verified answers.',
-        url: 'https://www.perplexity.ai',
-        category: 'LLM',
-        icon: 'perplexity.svg',
-        brandColor: '#20808d',
-        searchUrl: 'https://www.perplexity.ai/search?q=',
-        updatedAt: '2026-02-18',
-        invertDark: true
-    },
-    {
         id: 'genspark',
         name: 'Genspark',
         description: 'AI agents that help you search, shop, and learn more efficiently.',
@@ -64,6 +52,18 @@ export const links: Link[] = [
         icon: 'genspark.svg',
         brandColor: '#f97316',
         searchUrl: 'https://www.genspark.ai/search?query=',
+        invertDark: true
+    },
+    {
+        id: 'grok',
+        name: 'Grok',
+        description: 'AI model developed by xAI, designed to answer questions with a bit of wit and has a rebellious streak.',
+        url: 'https://grok.com/',
+        category: 'LLM',
+        icon: 'grok.png',
+        brandColor: '#1d9bf0',
+        searchUrl: 'https://grok.com/?q=',
+        updatedAt: '2026-02-18',
         invertDark: true
     },
     {
@@ -88,18 +88,6 @@ export const links: Link[] = [
         searchUrl: 'https://felo.ai/search?q='
     },
     {
-        id: 'grok',
-        name: 'Grok',
-        description: 'AI model developed by xAI, designed to answer questions with a bit of wit and has a rebellious streak.',
-        url: 'https://grok.com/',
-        category: 'LLM',
-        icon: 'grok.png',
-        brandColor: '#1d9bf0',
-        searchUrl: 'https://grok.com/?q=',
-        updatedAt: '2026-02-18',
-        invertDark: true
-    },
-    {
         id: 'deepseek',
         name: 'DeepSeek',
         description: 'Advanced AI models for reasoning, coding, and mathematical problem-solving.',
@@ -108,6 +96,18 @@ export const links: Link[] = [
         icon: 'deepseek.png',
         brandColor: '#4d6bfe',
         searchUrl: 'https://chat.deepseek.com/?q='
+    },
+    {
+        id: 'perplexity',
+        name: 'Perplexity',
+        description: 'AI-powered search engine and chatbot that provides accurate and verified answers.',
+        url: 'https://www.perplexity.ai',
+        category: 'LLM',
+        icon: 'perplexity.svg',
+        brandColor: '#20808d',
+        searchUrl: 'https://www.perplexity.ai/search?q=',
+        updatedAt: '2026-02-18',
+        invertDark: true
     },
     {
         id: 'kimi',
