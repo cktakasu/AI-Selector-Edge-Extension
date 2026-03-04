@@ -1,16 +1,24 @@
 /* Options page specific styles */
 :root {
-    --bg-body: #f4f4f5;
-    --text-primary: #1a1a2e;
+    --bg-body: #fafafa;
+    --text-primary: #171717;
+    --text-muted: #737373;
+    --border-subtle: #e5e5e5;
+    --bg-popup: #ffffff;
 }
 
 .dark {
-    --bg-body: #09090b;
-    --text-primary: #e4e4e7;
+    --bg-body: #0a0a0a;
+    --text-primary: #ededed;
+    --text-muted: #a3a3a3;
+    --border-subtle: #262626;
+    --bg-popup: #171717;
 }
 
 body {
     background-color: var(--bg-body);
     color: var(--text-primary);
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
 }
